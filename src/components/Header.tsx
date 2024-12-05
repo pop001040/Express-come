@@ -9,14 +9,14 @@ export const Header = ({ onContactClick }: { onContactClick: () => void }) => {
           <img 
             src="/lovable-uploads/bfc99d87-f65d-49dc-bb0b-6ca24c7f4ec9.png" 
             alt="Express Come Logo" 
-            className="h-12"
+            className="h-16 w-auto" // Increased logo size
           />
         </div>
         <nav className="flex gap-6 items-center">
-          <Link to="portfolio" smooth={true} className="cursor-pointer hover:text-primary text-lg">
+          <Link to="portfolio" smooth={true} className="cursor-pointer hover:text-[#ff6b00] text-lg">
             أعمالنا
           </Link>
-          <Link to="pricing" smooth={true} className="cursor-pointer hover:text-primary text-lg">
+          <Link to="pricing" smooth={true} className="cursor-pointer hover:text-[#ff6b00] text-lg">
             خطة الأسعار
           </Link>
           <Button 
