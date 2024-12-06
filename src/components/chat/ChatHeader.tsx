@@ -21,3 +21,4 @@ export const ChatHeader = ({ onClose }: ChatHeaderProps) => (
       </Avatar>
     </div>
   </div>
+);
