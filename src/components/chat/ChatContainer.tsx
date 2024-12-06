@@ -1,5 +1,6 @@
 import React from 'react';
 import ChatBot from 'react-simple-chatbot';
+import { Check, CreditCard, MessageCircle, Phone } from 'lucide-react';
 
 interface ChatContainerProps {
   steps: any[];
@@ -12,6 +13,30 @@ const TypingComponent = () => (
     <span>.</span>
   </div>
 );
+
+const CustomOption = ({ option }: { option: { value: number; label: string } }) => {
+  const getIcon = (value: number) => {
+    switch (value) {
+      case 1:
+        return <MessageCircle className="w-4 h-4" />;
+      case 2:
+        return <CreditCard className="w-4 h-4" />;
+      case 3:
+        return <Phone className="w-4 h-4" />;
+      case 4:
+        return <Check className="w-4 h-4" />;
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <div className="flex items-center gap-2">
+      {getIcon(option.value)}
+      <span>{option.label}</span>
+    </div>
+  );
+};
 
 export const ChatContainer = ({ steps }: ChatContainerProps) => (
   <ChatBot
@@ -36,15 +61,27 @@ export const ChatContainer = ({ steps }: ChatContainerProps) => (
       boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)',
     }}
     bubbleOptionStyle={{
-      backgroundColor: '#1A1F2C',
-      color: 'white',
-      borderRadius: '15px',
-      padding: '10px 15px',
-      marginBottom: '10px',
+      backgroundColor: '#fff',
+      color: '#1A1F2C',
+      borderRadius: '12px',
+      padding: '12px 15px',
+      marginBottom: '8px',
       cursor: 'pointer',
       transition: 'all 0.3s ease',
-      boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)',
+      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)',
+      border: '1px solid #e5e7eb',
+      display: 'flex',
+      alignItems: 'center',
+      gap: '8px',
+      '&:hover': {
+        backgroundColor: '#f3f4f6',
+        transform: 'translateY(-1px)',
+        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+      }
     }}
+    customDelay={1000}
+    optionBubbleColor="#FF7F00"
+    optionFontColor="#ffffff"
     avatarStyle={{
       borderRadius: '50%',
       width: '40px',
@@ -64,5 +101,6 @@ export const ChatContainer = ({ steps }: ChatContainerProps) => (
     speechSynthesis={{ enable: false }}
     loadingComponent={<TypingComponent />}
     className="chat-message"
+    customComponent={CustomOption}
   />
 );
