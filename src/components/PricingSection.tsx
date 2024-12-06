@@ -12,6 +12,9 @@ export const PricingSection = () => {
             </CardHeader>
             <CardContent className="text-center">
               <div className="text-4xl font-bold mb-6 text-[#ff6b00]">1999 ج.م</div>
+              <p className="text-lg mb-6 text-gray-600">
+                موقع ثابت مخصص باحترافية – التسليم خلال 72 ساعة فقط مقابل 1500 جنيه!
+              </p>
               <ul className="text-right space-y-4 text-lg">
                 <li className="flex items-center gap-2">
                   <span className="text-[#ff6b00]">✓</span>
