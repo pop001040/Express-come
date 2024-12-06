@@ -42,7 +42,14 @@ export const HeroSection = () => {
       />
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto">
-          <span ref={el} className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 inline-block"></span>
+          <span 
+            ref={el} 
+            className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 inline-block text-white"
+            style={{
+              textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)',
+              WebkitTextStroke: '1px rgba(0, 0, 0, 0.1)'
+            }}
+          ></span>
         </div>
       </div>
     </section>
