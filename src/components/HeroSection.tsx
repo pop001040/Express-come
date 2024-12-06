@@ -1,45 +1,53 @@
-import { useEffect, useRef } from "react";
-import Typed from "typed.js";
+import { useEffect, useRef } from 'react';
+import Typed from 'typed.js';
 
 export const HeroSection = () => {
   const el = useRef(null);
+  const typed = useRef<Typed | null>(null);
 
   useEffect(() => {
-    const typed = new Typed(el.current, {
+    const options = {
       strings: [
-        "نقدم لكم خدمات تطوير المواقع الإلكترونية",
-        "تصميم وتطوير تطبيقات الويب",
-        "حلول برمجية متكاملة",
+        "إحنا بنصمم مواقع ويب فريدة تعزز نجاحك وتفتح لك فرص رقمية جديدة",
+        "من الفكرة للتنفيذ، إحنا هنا علشان نحول رؤيتك لموقع ويب استثنائي.",
+        "ابدأ دلوقتي مع أحسن الحلول الرقمية اللي هتخليك تتفوق على المنافسين!"
       ],
       typeSpeed: 50,
-      backSpeed: 50,
+      backSpeed: 30,
+      backDelay: 2000,
+      startDelay: 500,
       loop: true,
-    });
+      showCursor: true,
+      cursorChar: '|',
+      autoInsertCss: true,
+    };
+
+    typed.current = new Typed(el.current!, options);
 
     return () => {
-      typed.destroy();
+      typed.current?.destroy();
     };
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center py-20 overflow-hidden">
-      <div
+    <section className="relative min-h-screen flex items-end pb-20 text-white text-center">
+      <div 
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: "url('/hero-bg.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          filter: "brightness(0.7)",
+          backgroundImage: `url('/lovable-uploads/baa6dd9a-102f-4340-938b-002c72534e28.png')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
         }}
       />
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto">
           <span 
             ref={el} 
-            className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 inline-block"
+            className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 inline-block text-white"
             style={{
-              color: '#333333',
-              textShadow: '2px 2px 4px rgba(0, 0, 0, 0.1)',
+              textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)',
+              WebkitTextStroke: '1px rgba(0, 0, 0, 0.1)'
             }}
           ></span>
         </div>
