@@ -7,7 +7,7 @@ interface ChatButtonProps {
 export const ChatButton = ({ onClick }: ChatButtonProps) => (
   <button
     onClick={onClick}
-    className="rounded-full shadow-lg hover:bg-[#FF7F00]/10 transition-all duration-300 p-2"
+    className="fixed bottom-4 right-4 rounded-full shadow-lg hover:bg-[#FF7F00]/10 transition-all duration-300 p-2"
     aria-label="فتح المحادثة"
   >
     <img 

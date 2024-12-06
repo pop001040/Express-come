@@ -71,6 +71,7 @@ export const ChatContainer = ({ steps }: ChatContainerProps) => (
       maxWidth: '80%',
       boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)',
       fontSize: '16px',
+      fontFamily: 'Cairo, sans-serif',
     }}
     bubbleOptionStyle={{
       background: 'linear-gradient(135deg, #fff 0%, #f3f4f6 100%)',
@@ -86,6 +87,7 @@ export const ChatContainer = ({ steps }: ChatContainerProps) => (
       alignItems: 'center',
       gap: '8px',
       fontSize: '16px',
+      fontFamily: 'Cairo, sans-serif',
     }}
     customDelay={1000}
     optionBubbleColor="#FF7F00"
