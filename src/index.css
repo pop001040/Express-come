@@ -41,3 +41,36 @@
 .section-fade.visible {
   @apply opacity-100;
 }
+
+@keyframes typing {
+  0% { opacity: .2; }
+  20% { opacity: 1; }
+  100% { opacity: .2; }
+}
+
+.typing-animation span {
+  animation: typing 1.4s infinite both;
+}
+
+.typing-animation span:nth-child(2) {
+  animation-delay: .2s;
+}
+
+.typing-animation span:nth-child(3) {
+  animation-delay: .4s;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chat-message {
+  animation: slideIn 0.3s ease-out forwards;
+}
