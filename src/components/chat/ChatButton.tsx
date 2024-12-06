@@ -1,3 +1,5 @@
+import { MessageCircle } from "lucide-react";
+
 interface ChatButtonProps {
   onClick: () => void;
 }
@@ -11,7 +13,7 @@ export const ChatButton = ({ onClick }: ChatButtonProps) => (
     <img 
       src="/lovable-uploads/2928ea5d-0496-42fa-b4c6-b6440e96e0f4.png"
       alt="Chat Bot"
-      className="w-[40px] h-[40px] rounded-full border-2 border-[#FF7F00] shadow-lg hover:border-[#FF9F40] transition-colors"
+      className="w-[40px] h-[40px] rounded-full border-2 border-[#FF7F00]"
     />
   </button>
 );
