@@ -1,6 +1,6 @@
 import React from 'react';
 import ChatBot from 'react-simple-chatbot';
-import { Check, CreditCard, MessageCircle, Phone, Upload, WhatsappIcon } from 'lucide-react';
+import { Check, CreditCard, MessageCircle, Phone, Upload, MessageSquare } from 'lucide-react';
 
 interface ChatContainerProps {
   steps: any[];
@@ -22,7 +22,7 @@ const CustomOption = ({ option }: { option: { value: number; label: string; link
       case 2:
         return <CreditCard className="w-4 h-4" />;
       case 3:
-        return <WhatsappIcon className="w-4 h-4" />;
+        return <MessageSquare className="w-4 h-4" />;
       case 4:
         return <Check className="w-4 h-4" />;
       case 5:
