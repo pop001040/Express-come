@@ -1,4 +1,3 @@
-import React from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 interface ChatHeaderProps {
@@ -15,10 +14,10 @@ export const ChatHeader = ({ onClose }: ChatHeaderProps) => (
       ✕
     </button>
     <div className="flex items-center gap-3">
-      <h3 className="font-bold text-[18px]" style={{ fontFamily: 'Cairo, sans-serif' }}>المساعد الافتراضي</h3>
+      <h3 className="font-bold text-[18px]" style={{ fontFamily: 'Cairo, sans-serif' }}>المطور الذكي</h3>
       <Avatar className="h-10 w-10 border-2 border-[#FF7F00]">
         <AvatarImage src="/lovable-uploads/2928ea5d-0496-42fa-b4c6-b6440e96e0f4.png" alt="Bot Avatar" />
-        <AvatarFallback>EC</AvatarFallback>
+        <AvatarFallback>AI</AvatarFallback>
       </Avatar>
     </div>
   </div>
