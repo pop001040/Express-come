@@ -5,6 +5,14 @@ interface ChatContainerProps {
   steps: any[];
 }
 
+const TypingComponent = () => (
+  <div className="typing-animation flex gap-1 px-2 py-1">
+    <span>.</span>
+    <span>.</span>
+    <span>.</span>
+  </div>
+);
+
 export const ChatContainer = ({ steps }: ChatContainerProps) => (
   <ChatBot
     steps={steps}
@@ -54,5 +62,7 @@ export const ChatContainer = ({ steps }: ChatContainerProps) => (
     enableMobileAutoFocus={true}
     enableSmoothScroll={true}
     speechSynthesis={{ enable: false }}
+    loadingComponent={<TypingComponent />}
+    className="chat-message"
   />
 );
