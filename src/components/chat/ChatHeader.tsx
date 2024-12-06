@@ -5,7 +5,7 @@ interface ChatHeaderProps {
 }
 
 export const ChatHeader = ({ onClose }: ChatHeaderProps) => (
-  <div className="flex justify-between items-center p-4 border-b bg-[#FF7F00] text-white rounded-t-lg">
+  <div className="flex justify-between items-center p-4 text-white">
     <button
       onClick={onClose}
       className="text-white/80 hover:text-white transition-colors"
