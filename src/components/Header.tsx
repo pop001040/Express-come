@@ -3,7 +3,7 @@ import { Link } from "react-scroll";
 
 export const Header = ({ onContactClick }: { onContactClick: () => void }) => {
   return (
-    <header className="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
+    <header className="fixed w-full bg-[#444444] shadow-md z-50">
       <div className="container mx-auto px-4 py-2 flex flex-col md:flex-row md:justify-between items-center">
         <div className="mb-2 md:mb-0">
           <img 
@@ -13,10 +13,18 @@ export const Header = ({ onContactClick }: { onContactClick: () => void }) => {
           />
         </div>
         <nav className="flex flex-wrap gap-4 md:gap-6 items-center justify-center">
-          <Link to="portfolio" smooth={true} className="cursor-pointer hover:text-[#ff6b00] text-base md:text-lg">
+          <Link 
+            to="portfolio" 
+            smooth={true} 
+            className="text-white text-base md:text-lg hover:text-[#ff6b00] transition-colors duration-300 cursor-pointer"
+          >
             أعمالنا
           </Link>
-          <Link to="pricing" smooth={true} className="cursor-pointer hover:text-[#ff6b00] text-base md:text-lg">
+          <Link 
+            to="pricing" 
+            smooth={true} 
+            className="text-white text-base md:text-lg hover:text-[#ff6b00] transition-colors duration-300 cursor-pointer"
+          >
             خطة الأسعار
           </Link>
           <Button 

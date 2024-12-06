@@ -32,7 +32,7 @@ export const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-end pb-20 text-white text-center">
       <div 
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 before:content-[''] before:absolute before:inset-0 before:bg-black/50"
         style={{
           backgroundImage: `url('/lovable-uploads/baa6dd9a-102f-4340-938b-002c72534e28.png')`,
           backgroundSize: 'cover',
