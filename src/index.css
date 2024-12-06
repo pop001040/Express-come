@@ -76,7 +76,7 @@
 }
 
 .rsc-os-option-element {
-  @apply flex items-center gap-2 rounded-xl bg-white text-gray-800 shadow-md hover:shadow-lg transition-all duration-300 !important;
+  @apply flex items-center gap-2 rounded-xl bg-gradient-to-r from-white to-gray-50 text-gray-800 shadow-md hover:shadow-lg transition-all duration-300 !important;
 }
 
 .rsc-os-option-element:hover {
@@ -85,4 +85,12 @@
 
 .rsc-os-option-element svg {
   @apply text-[#FF7F00] !important;
+}
+
+.file-upload-button {
+  @apply relative inline-flex items-center px-4 py-2 bg-[#FF7F00] text-white rounded-full hover:bg-[#FF7F00]/90 transition-colors duration-300;
+}
+
+.file-upload-button input[type="file"] {
+  @apply absolute inset-0 w-full h-full opacity-0 cursor-pointer;
 }

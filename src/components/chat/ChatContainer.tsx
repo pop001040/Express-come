@@ -1,6 +1,6 @@
 import React from 'react';
 import ChatBot from 'react-simple-chatbot';
-import { Check, CreditCard, MessageCircle, Phone } from 'lucide-react';
+import { Check, CreditCard, MessageCircle, Phone, Upload, WhatsappIcon } from 'lucide-react';
 
 interface ChatContainerProps {
   steps: any[];
@@ -14,7 +14,7 @@ const TypingComponent = () => (
   </div>
 );
 
-const CustomOption = ({ option }: { option: { value: number; label: string } }) => {
+const CustomOption = ({ option }: { option: { value: number; label: string; link?: string } }) => {
   const getIcon = (value: number) => {
     switch (value) {
       case 1:
@@ -22,16 +22,27 @@ const CustomOption = ({ option }: { option: { value: number; label: string } }) 
       case 2:
         return <CreditCard className="w-4 h-4" />;
       case 3:
-        return <Phone className="w-4 h-4" />;
+        return <WhatsappIcon className="w-4 h-4" />;
       case 4:
         return <Check className="w-4 h-4" />;
+      case 5:
+        return <Upload className="w-4 h-4" />;
       default:
         return null;
     }
   };
 
+  const handleClick = () => {
+    if (option.link) {
+      window.open(option.link, '_blank');
+    }
+  };
+
   return (
-    <div className="flex items-center gap-2">
+    <div 
+      className="flex items-center gap-2 cursor-pointer"
+      onClick={handleClick}
+    >
       {getIcon(option.value)}
       <span>{option.label}</span>
     </div>
@@ -61,7 +72,7 @@ export const ChatContainer = ({ steps }: ChatContainerProps) => (
       boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)',
     }}
     bubbleOptionStyle={{
-      backgroundColor: '#fff',
+      background: 'linear-gradient(135deg, #fff 0%, #f3f4f6 100%)',
       color: '#1A1F2C',
       borderRadius: '12px',
       padding: '12px 15px',
@@ -74,7 +85,6 @@ export const ChatContainer = ({ steps }: ChatContainerProps) => (
       alignItems: 'center',
       gap: '8px',
       '&:hover': {
-        backgroundColor: '#f3f4f6',
         transform: 'translateY(-1px)',
         boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
       }

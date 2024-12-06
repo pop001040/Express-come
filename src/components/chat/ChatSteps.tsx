@@ -11,8 +11,9 @@ export const chatSteps = [
     options: [
       { value: 1, label: 'عايز أعرف إزاي أشترك في الخدمة', trigger: '3' },
       { value: 2, label: 'ما هي طرق الدفع المتاحة؟', trigger: '4' },
-      { value: 3, label: 'عايز أتكلم مع خدمة العملاء', trigger: '5' },
+      { value: 3, label: 'عايز أتكلم مع خدمة العملاء', trigger: '5', link: 'https://wa.me/01030435987' },
       { value: 4, label: 'عندي استفسار تاني', trigger: '6' },
+      { value: 5, label: 'عايز أرسل ملفات أو صور', trigger: 'upload' },
     ],
   },
   {
@@ -27,7 +28,16 @@ export const chatSteps = [
   },
   {
     id: '5',
-    message: 'طبعاً! 📱 تقدر تتواصل معانا مباشرة على واتساب: 01030435987 - هنكون سعداء بخدمتك!',
+    component: (
+      <a 
+        href="https://wa.me/01030435987" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="text-[#FF7F00] hover:underline"
+      >
+        اضغط هنا للتواصل معنا على واتساب 📱
+      </a>
+    ),
     trigger: '7',
   },
   {
@@ -39,5 +49,27 @@ export const chatSteps = [
     id: '7',
     message: 'في حاجة تانية تقدر أساعدك فيها؟ 😊',
     trigger: '2',
+  },
+  {
+    id: 'upload',
+    component: (
+      <div className="flex flex-col gap-2">
+        <p className="text-sm text-gray-600">يمكنك رفع الملفات أو الصور هنا:</p>
+        <input
+          type="file"
+          accept="image/*,.pdf,.doc,.docx"
+          className="file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-[#FF7F00] file:text-white hover:file:bg-[#FF7F00]/80 text-sm text-gray-500"
+          onChange={(e) => {
+            const file = e.target.files?.[0];
+            if (file) {
+              console.log('File selected:', file);
+              // Here you would typically handle the file upload
+              // For now we just log it
+            }
+          }}
+        />
+      </div>
+    ),
+    trigger: '7',
   },
 ];
