@@ -5,7 +5,7 @@ interface ChatHeaderProps {
 }
 
 export const ChatHeader = ({ onClose }: ChatHeaderProps) => (
-  <div className="flex justify-between items-center p-4 border-b bg-[#FF7F00] text-white rounded-t-lg">
+  <div className="flex justify-between items-center p-3 border-b bg-[#FF7F00]/80 backdrop-blur-sm text-white rounded-t-lg">
     <button
       onClick={onClose}
       className="text-white/80 hover:text-white transition-colors"
@@ -14,8 +14,8 @@ export const ChatHeader = ({ onClose }: ChatHeaderProps) => (
       ✕
     </button>
     <div className="flex items-center gap-3">
-      <h3 className="font-bold text-[18px]" style={{ fontFamily: 'Cairo, sans-serif' }}>المطور الذكي</h3>
-      <Avatar className="h-10 w-10 border-2 border-white">
+      <h3 className="font-bold text-[16px]" style={{ fontFamily: 'Cairo, sans-serif' }}>المطور الذكي</h3>
+      <Avatar className="h-8 w-8 border-2 border-white">
         <AvatarImage src="/lovable-uploads/2928ea5d-0496-42fa-b4c6-b6440e96e0f4.png" alt="Bot Avatar" />
         <AvatarFallback>AI</AvatarFallback>
       </Avatar>

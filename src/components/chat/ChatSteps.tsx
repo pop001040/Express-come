@@ -1,5 +1,35 @@
 import React from 'react';
 
+const FileUploadComponent = () => {
+  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      // Create WhatsApp share URL with the file
+      const whatsappNumber = "01030435987";
+      const message = "مرحباً، لدي ملف للمشاركة";
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+    }
+  };
+
+  return (
+    <div className="flex flex-col gap-2">
+      <input
+        type="file"
+        accept="image/*,.pdf,.doc,.docx"
+        onChange={handleFileUpload}
+        className="file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-[#FF7F00] file:text-white hover:file:bg-[#FF7F00]/80 text-sm text-gray-500"
+      />
+      <button
+        onClick={() => window.open(`https://wa.me/01030435987`, '_blank')}
+        className="bg-[#FF7F00] text-white px-4 py-2 rounded-full hover:bg-[#FF7F00]/80 transition-colors text-sm"
+      >
+        إرسال عبر الواتساب
+      </button>
+    </div>
+  );
+};
+
 export const chatSteps = [
   {
     id: '1',
@@ -52,24 +82,7 @@ export const chatSteps = [
   },
   {
     id: 'upload',
-    component: (
-      <div className="flex flex-col gap-2">
-        <p className="text-sm text-gray-600">يمكنك رفع الملفات أو الصور هنا:</p>
-        <input
-          type="file"
-          accept="image/*,.pdf,.doc,.docx"
-          className="file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-[#FF7F00] file:text-white hover:file:bg-[#FF7F00]/80 text-sm text-gray-500"
-          onChange={(e) => {
-            const file = e.target.files?.[0];
-            if (file) {
-              console.log('File selected:', file);
-              // Here you would typically handle the file upload
-              // For now we just log it
-            }
-          }}
-        />
-      </div>
-    ),
+    component: <FileUploadComponent />,
     trigger: '7',
   },
 ];
