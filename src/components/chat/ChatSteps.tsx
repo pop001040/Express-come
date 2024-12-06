@@ -13,18 +13,30 @@ const FileUploadComponent = () => {
   };
 
   return (
-    <div className="flex flex-col gap-2">
-      <input
-        type="file"
-        accept="image/*,.pdf,.doc,.docx"
-        onChange={handleFileUpload}
-        className="file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-[#FF7F00] file:text-white hover:file:bg-[#FF7F00]/80 text-sm text-gray-500"
-      />
+    <div className="flex flex-col gap-2 p-2">
+      <div className="relative">
+        <input
+          type="file"
+          accept="image/*,.pdf,.doc,.docx"
+          onChange={handleFileUpload}
+          className="hidden"
+          id="file-upload"
+        />
+        <label 
+          htmlFor="file-upload" 
+          className="file-upload-button mb-2 w-full text-center cursor-pointer"
+        >
+          اختيار ملف
+        </label>
+      </div>
       <button
         onClick={() => window.open(`https://wa.me/01030435987`, '_blank')}
-        className="bg-[#FF7F00] text-white px-4 py-2 rounded-full hover:bg-[#FF7F00]/80 transition-colors text-sm"
+        className="bg-[#FF7F00] text-white px-4 py-2 rounded-full hover:bg-[#FF7F00]/80 transition-colors text-sm w-full flex items-center justify-center gap-2"
       >
-        إرسال عبر الواتساب
+        <span>إرسال عبر الواتساب</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/>
+        </svg>
       </button>
     </div>
   );
