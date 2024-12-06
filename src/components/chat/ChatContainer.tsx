@@ -44,7 +44,7 @@ const CustomOption = ({ option }: { option: { value: number; label: string; link
       onClick={handleClick}
     >
       {getIcon(option.value)}
-      <span>{option.label}</span>
+      <span style={{ fontFamily: 'Cairo, sans-serif' }}>{option.label}</span>
     </div>
   );
 };
@@ -56,11 +56,11 @@ export const ChatContainer = ({ steps }: ChatContainerProps) => (
     placeholder="اكتب رسالتك..."
     floating={true}
     style={{ 
-      width: '350px',
-      minHeight: '400px',
-      maxHeight: '600px',
+      width: '100%',
+      height: '500px',
       borderRadius: '15px',
       boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
+      fontFamily: 'Cairo, sans-serif',
     }}
     bubbleStyle={{
       backgroundColor: '#FF7F00',
@@ -70,6 +70,7 @@ export const ChatContainer = ({ steps }: ChatContainerProps) => (
       marginBottom: '10px',
       maxWidth: '80%',
       boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)',
+      fontSize: '16px',
     }}
     bubbleOptionStyle={{
       background: 'linear-gradient(135deg, #fff 0%, #f3f4f6 100%)',
@@ -84,10 +85,7 @@ export const ChatContainer = ({ steps }: ChatContainerProps) => (
       display: 'flex',
       alignItems: 'center',
       gap: '8px',
-      '&:hover': {
-        transform: 'translateY(-1px)',
-        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
-      }
+      fontSize: '16px',
     }}
     customDelay={1000}
     optionBubbleColor="#FF7F00"
@@ -98,7 +96,7 @@ export const ChatContainer = ({ steps }: ChatContainerProps) => (
       height: '40px',
       border: '2px solid #FF7F00',
     }}
-    botAvatar="/lovable-uploads/baa6dd9a-102f-4340-938b-002c72534e28.png"
+    botAvatar="/lovable-uploads/2928ea5d-0496-42fa-b4c6-b6440e96e0f4.png"
     userAvatar="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231A1F2C'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z'/%3E%3C/svg%3E"
     customStyle={{
       background: '#ffffff',

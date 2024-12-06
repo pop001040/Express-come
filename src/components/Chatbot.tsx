@@ -8,10 +8,10 @@ export const CustomChatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="fixed bottom-4 left-4 z-50">
+    <div className="fixed bottom-4 right-4 z-50">
       {!isOpen && <ChatButton onClick={() => setIsOpen(true)} />}
       {isOpen && (
-        <div className="bg-white rounded-lg shadow-xl w-[350px] transition-all duration-300 ease-in-out">
+        <div className="bg-white rounded-lg shadow-xl w-[90vw] sm:w-[400px] md:w-[450px] transition-all duration-300 ease-in-out">
           <ChatHeader onClose={() => setIsOpen(false)} />
           <ChatContainer steps={chatSteps} />
         </div>

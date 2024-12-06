@@ -28,7 +28,7 @@
   }
  
   body {
-    @apply bg-[#FF7F00] text-foreground;
+    @apply bg-[#FF7F00] text-black;
     font-family: 'Cairo', sans-serif;
   }
 }
